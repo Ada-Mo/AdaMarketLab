@@ -1,12 +1,14 @@
-import pandas as pd
-
-from engine.strategy import ema_strategy, rsi_strategy, breakout_strategy
+from core.data_manager import load_price_data
+from core.logger import get_logger
 from engine.backtest import backtest
+from engine.strategy import ema_strategy, rsi_strategy, breakout_strategy
+
+
+logger = get_logger()
 
 
 def handle_strategy_compare():
-
-    df = pd.read_csv("data/price.csv")
+    df = load_price_data()
 
     strategies = {
         "EMA": ema_strategy,
@@ -17,7 +19,6 @@ def handle_strategy_compare():
     results = {}
 
     for name, strategy in strategies.items():
-
         temp_df = strategy(df)
 
         print("\n===================")
@@ -36,3 +37,11 @@ def handle_strategy_compare():
         print("  胜率:", result["win_rate"])
         print("  最大回撤:", result["max_drawdown"])
         print("-------------")
+
+        logger.info(
+            "Strategy compare result | "
+            f"strategy={name} | "
+            f"final_capital={result['final_capital']:.4f} | "
+            f"win_rate={result['win_rate']:.2%} | "
+            f"max_drawdown={result['max_drawdown']:.2%}"
+        )

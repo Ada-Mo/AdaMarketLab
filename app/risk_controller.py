@@ -7,7 +7,8 @@ from modules.risk import (
     trade_decision,
     recommend_leverage,
 )
-
+from core.logger import get_logger
+logger = get_logger()
 
 def handle_risk_calculator():
     price = float(input("BTC开仓价："))

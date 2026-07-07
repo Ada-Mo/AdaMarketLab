@@ -8,4 +8,7 @@ def show_menu():
     print("4. 仓位/风险计算器")
     print("5. 回测系统")
     print("6. 策略对比系统")
+    print("7. 策略参数优化")
+    print("8. OKX 行情测试")
+    print("9. 下载OKX历史数据")
     print("10. 退出")

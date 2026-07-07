@@ -1,6 +1,7 @@
 from core.database import get_next_id, save_trade
 from engine.engine import execute_trade
-
+from core.logger import get_logger
+logger = get_logger()
 
 def input_float(prompt):
     while True:
