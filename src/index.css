@@ -1,0 +1,33 @@
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f7fb;
+  background: #090b0f;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f7fb;
+  background: #090b0f;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+button {
+  font-family: inherit;
+}
